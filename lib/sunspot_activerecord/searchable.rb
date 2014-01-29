@@ -66,7 +66,7 @@ module SunspotActiveRecord #:nodoc:
           extend ClassMethods
           include InstanceMethods
 
-          class_inheritable_hash :sunspot_options
+          class_attribute :sunspot_options
 
           unless options[:auto_index] == false
             after_save :maybe_auto_index
