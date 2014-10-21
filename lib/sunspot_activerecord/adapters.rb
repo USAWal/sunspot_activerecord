@@ -46,9 +46,7 @@ module SunspotActiveRecord #:nodoc:
       # ActiveRecord::Base:: ActiveRecord model
       #
       def load(id)
-        @clazz.first(options_for_find.merge(
-          :conditions => { @clazz.primary_key => id}
-        ))
+        @clazz.where(@clazz.primary_key => id).first(options_for_find.merge)
       end
 
       #
@@ -63,9 +61,7 @@ module SunspotActiveRecord #:nodoc:
       # Array:: Collection of ActiveRecord models
       #
       def load_all(ids)
-        @clazz.all(options_for_find.merge(
-          :conditions => { @clazz.primary_key => ids.map { |id| id }}
-        ))
+        @clazz.where(@clazz.primary_key => ids.map { |id| id }).all(options_for_find.merge)
       end
 
       private
