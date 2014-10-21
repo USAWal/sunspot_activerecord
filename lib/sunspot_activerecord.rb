@@ -1,4 +1,5 @@
 require 'sunspot'
+require 'active_record'
 
 sunspot_activerecord_include_dir = File.expand_path(File.dirname(__FILE__) + '/sunspot_activerecord')
 require File.join(sunspot_activerecord_include_dir, 'adapters')
